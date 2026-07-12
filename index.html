@@ -1,235 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Badges - Github</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="./icons/favicon.svg">
-    <link rel="stylesheet" href="style.css">
-
-
+    <title>Profile Badges — GitHub</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div>
-    <div>
-        <header>
-            <div class="logo">
-                <a href="https://github.com/luismede/archievements-badges" target="_blank"><img src="./icons/Github.svg" 
-                alt="Github Repository"></a>
+    <header class="topbar">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+        <a href="https://github.com/luismede/archievements-badges" class="topbar-logo" target="_blank">
+            <img src="./assets/icons/Github.svg" alt="GitHub Repository" width="32" height="32">
+        </a>
+        <span class="topbar-title">Profile Badges</span>
+        <div class="topbar-actions">
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="pt">PT</button>
+                <button class="lang-btn" data-lang="es">ES</button>
+                <button class="lang-btn" data-lang="fr">FR</button>
             </div>
-        </header>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3 class="nav-section-title" data-i18n="earnable">Earnable</h3>
+                    <a class="nav-item" data-view="badge" data-id="pull-shark">Pull Shark</a>
+                    <a class="nav-item" data-view="badge" data-id="galaxy-brain">Galaxy Brain</a>
+                    <a class="nav-item" data-view="badge" data-id="quickdraw">Quickdraw</a>
+                    <a class="nav-item" data-view="badge" data-id="yolo">YOLO</a>
+                    <a class="nav-item" data-view="badge" data-id="starstruck">Starstruck</a>
+                    <a class="nav-item" data-view="badge" data-id="pair-extraordinaire">Pair Extraordinaire</a>
+                    <a class="nav-item" data-view="badge" data-id="puelic-sponsor">Public Sponsor</a>
+                </div>
+                <div class="nav-section">
+                    <h3 class="nav-section-title" data-i18n="testing">In Testing</h3>
+                    <a class="nav-item" data-view="badge" data-id="heart-on-your-sleeve">Heart On Your Sleeve</a>
+                    <a class="nav-item" data-view="badge" data-id="open-sourcerer">Open Sourcerer</a>
+                </div>
+                <div class="nav-section">
+                    <h3 class="nav-section-title" data-i18n="unobtainable">Unobtainable</h3>
+                    <a class="nav-item" data-view="badge" data-id="arctic-code-vault">Arctic Code Vault</a>
+                    <a class="nav-item" data-view="badge" data-id="mars-2020">Mars 2020 Contributor</a>
+                </div>
+                <div class="nav-section">
+                    <h3 class="nav-section-title" data-i18n="tiers">Tiers</h3>
+                    <a class="nav-item" data-view="tiers" data-id="starstruck">Starstruck</a>
+                    <a class="nav-item" data-view="tiers" data-id="pull-shark">Pull Shark</a>
+                    <a class="nav-item" data-view="tiers" data-id="galaxy-brain">Galaxy Brain</a>
+                    <a class="nav-item" data-view="tiers" data-id="pair-extraordinaire">Pair Extraordinaire</a>
+                </div>
+                <div class="nav-section">
+                    <h3 class="nav-section-title" data-i18n="skin-tones">Skin Tones</h3>
+                    <a class="nav-item" data-view="skin-tones">Quickdraw Variants</a>
+                </div>
+                <div class="nav-section">
+                    <h3 class="nav-section-title" data-i18n="highlights">Highlights</h3>
+                    <a class="nav-item" data-view="highlights">View All</a>
+                </div>
+                <div class="nav-section sidebar-lang-section">
+                    <h3 class="nav-section-title" data-i18n="language">Language</h3>
+                    <div class="sidebar-lang-buttons">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="pt">PT</button>
+                        <button class="lang-btn" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="fr">FR</button>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="content" id="mainContent">
+            <div class="content-placeholder">
+                <h2 data-i18n="select-badge">Select a badge from the sidebar</h2>
+                <p data-i18n="select-badge-desc">Click any badge or category to view its guide and details.</p>
+            </div>
+        </main>
     </div>
 
-    <div>
-        <div style="text-align: center;">
-            <h1>Badges List</h1>
-        </div>
-        <section class="icons-area">
-            <div>
-                <img src="./badges/pull-shark-default.png" >
-                <p>Pull Shark</p>
-                <a href="https://github.com/luismede/archievements-badges/tree/main/how-to-get/pull-shark" target="_blank"><button>How to get?</button></a>
-                
-            </div>
+    <footer class="footer">
+        <p>MIT License &copy; 2024 Luis Henrique</p>
+    </footer>
 
-            <div>
-                <img src="./badges/GalaxyBrain.png" >
-                <p>Galaxy Brain</p>
-                <a href="https://github.com/luismede/archievements-badges/tree/main/how-to-get/galaxy-brain" target="_blank"><button>How to get?</button></a>
-
-            </div>
-
-            <div>
-                <img src="./badges/QuickDraw_SkinTone1.png" >
-                <p>Quickdraw</p>
-                <a href="https://github.com/luismede/archievements-badges/tree/main/how-to-get/quickdraw" target="_blank"><button>How to get?</button></a>
-            </div>
-
-            <div>
-                <img src="./badges/YOLO_Badge.png" >
-                <p>YOLO</p>
-                <a href="https://github.com/luismede/archievements-badges/tree/main/how-to-get/yolo" target="_blank"><button>How to get?</button></a>
-            </div>
-
-            <div>
-                <img src="./badges/starstruck-default.png" >
-                <p>Starstruck</p>
-                <a href="https://github.com/luismede/archievements-badges/tree/main/how-to-get/startruck" target="_blank"><button>How to get?</button></a>
-
-            </div>
-            <div >
-                <img src="./badges/pair-extraordinaire-default.png" >
-                <p>Pair Extraordinaire</p>
-                <a href="https://github.com/luismede/archievements-badges/tree/main/how-to-get/pair-extraordinaire" target="_blank"><button>How to get?</button></a>
-
-            </div>
-            <div >
-                <img src="./badges/GitHubSponsorBadge.png" >
-                <p>Public Sponsor</p>
-                <a href="https://github.com/luismede/archievements-badges/tree/main/how-to-get/public-sponsor" target="_blank"><button>How to get?</button></a>
-            </div>
-        </section>
-        <a href="https://github.com/luismede/archievements-badges?tab=readme-ov-file#all-badges" target="_blank" ><h2 class="more">View all</h2></a>
-
-        <div style="text-align: center;">
-            <h1>Achievements Being Tested</h1>
-        </div>
-        <section class="icons-area-unreachable" style="text-align: center; grid-template-columns: repeat(2, 1fr); padding: 80px 20vw">
-            <div >
-                <img src="./badges/heart-on-your-sleeve-default.png" >
-                <p>Heart On Your Sleeve</p>
-                <p style="color: #0075FF;">In testing</p>
-            </div>
-
-            <div >
-                <img src="./badges/open-sourcerer-default.png" >
-                <p>Heart On Your Sleeve</p>
-                <p style="color: #0075FF;">In testing</p>
-            </div>
-        </section>
-
-        <div>
-            <h1 style="text-align: center;">Un-Obtainable Achievements</h1>
-        </div>
-        <section class="icons-area-unreachable">
-            <div >
-                <img src="./badges/mars-2020-contributor-default.png" >
-                <p>Mars 2020 Contributors</p>
-                <p style="color: #ff004c;">Unreachable</p>
-            </div>
-
-            <div >
-                <img src="./badges/arctic-code-vault-contributor-default.png" >
-                <p>Arctic Code Vault Contributor</p>
-                <p style="color: #ff004c;">Unreachable</p>
-            </div>
-        </div>
-
-<div>
-    <div style="text-align: center;">
-        <h1>Achievements Tiers</h1>
-    </div>
-    <div>
-        <section class="icons-area-tiers">
-                <div>
-                    <img src="./badges/PullShark_Bronze.png" >          
-                    <p>	16 pull requests</p>
-                </div>
-    
-                <div >
-                    <img src="./badges/PullShark_Silver.png" >
-                    <p>128 pull requests</p>
-                </div>
-    
-                <div>
-                    <img src="./badges/PullShark_Gold.png" >
-                    <p>1024 pull requests</p>
-                </div>
-    
-                <div>
-                    <img src="./badges/StarStruck_Bronze.png" >
-                    <p>128 stars</p>
-                </div>
-    
-                <div >
-                    <img src="./badges/StarStruck_Silver.png" >
-                    <p>512 stars</p>
-                </div>
-
-                <div>
-                    <img src="./badges/StarStruck_Gold.png" >
-                    <p>4096 stars</p>
-                </div>
-    
-                <div >
-                    <img src="./badges/GalaxyBrain_Bronze.png" >
-                    <p>8 answers</p>
-                </div>
-
-                <div >
-                    <img src="./badges/GalaxyBrain_Silver.png" >
-                    <p>16 answers</p>
-                </div>
-
-                <div >
-                    <img src="./badges/GalaxyBrain_Gold.png" >
-                    <p>32 answers</p>
-                </div>
-
-                <div >
-                    <img src="./badges/PairExtraordinaire_Bronze.png" >
-                    <p>10 pull requests</p>
-                </div>
-
-                <div >
-                    <img src="./badges/PairExtraordinaire_Silver.png" >
-                    <p>24 pull requests</p>
-                </div>
-
-                <div >
-                    <img src="./badges/PairExtraordinaire_Gold.png" >
-                    <p>48 pull requests</p>
-                </div>
-                
-        </section>
-        <div class="final-button">
-        <a href="https://github.com/luismede/archievements-badges?tab=readme-ov-file#tiers" target="_blank"><button class="button-tiers">How to get?</button></a>
-    </div>
-    </div>
-</div>
-<div class="skin-tone">
-    <div style="text-align: center;">
-        <h1>Achievement Skin Tone</h1>
-    </div>
-    <section class="icons-area-skin" >
-        <div>
-            <img src="./badges/QuickDraw_SkinTone1.png" >        
-            <p>👋</p>  
-        </div>
-
-        <div >
-            <img src="./badges/quickdraw-tone1.png" >
-            <p>👋🏻</p>
-        </div>
-
-        <div>
-            <img src="./badges/quickdraw-tone2.png" >
-            <p>👋🏼</p>
-        </div>
-
-        <div>
-            <img src="./badges/quickdraw-tone3.png" >
-            <p>👋🏽</p>
-        </div>
-
-        <div >
-            <img src="./badges/quickdraw-tone4.png" >
-            <p>👋🏾</p>
-        </div>
-
-        <div>
-            <img src="./badges/quickdraw-tone5.png" >
-            <p>👋🏿</p>
-        </div>
-</section>
-<a href="https://github.com/github-profile-achievements/english?tab=readme-ov-file#achievement-skin-tone" target="_blank" ><h2 class="more">View more</h2></a>
-
-</div>
-
-        <div  class="final-follow">
-            <h1>Follow Me and Star this project</h1>
-            <p class="about">Hello everyone! This project was created to help and simplify how you can get your badges for your profile. </br>
-                This site was just another way to help you, if possible, I ask that you follow my github page and give this project a star to help reach more people in the dev community. ❤️
-            </p>
-                <div class="final-button">
-                    <a href="https://github.com/luismede/" target="_blank"><button class="follow">Follow Me</button></a>
-                </div>
-
-        </div>
-        <div class="license">
-            <p class="about" >MIT License - Copyright &copy 2024 Luis Henrique</p>
-        </div>
-</div>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
